@@ -10,9 +10,12 @@
 	--AccentTextColour: :
 }
 
+.CentreMe
+{
+	text-align:center;
+}
 
 /*https://www.w3schools.com/howto/howto_js_slideshow.asp*/
-
 
 
 .slideshow{
@@ -2284,6 +2287,7 @@ input, select, textarea {
 		.image.avatar {
 			border-radius: 100%;
 			overflow: hidden;
+			width: 25%;
 		}
 
 			.image.avatar img {
@@ -2291,6 +2295,7 @@ input, select, textarea {
 				display: block;
 				width: 100%;
 			}
+
 
 		.image.main {
 			height: 30em;
@@ -2300,6 +2305,7 @@ input, select, textarea {
 
 		.image.main.MatCt{
 			height: 40em;
+			translate: 0px 44px;
 		}
 
 			.image.main img {
@@ -3186,6 +3192,7 @@ body.header-visible #header {
 
 			.image.main {
 				height: 20em;
+				translate: 0px 44px;
 			}
 
 		/* Header */
