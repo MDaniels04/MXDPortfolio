@@ -1,6 +1,99 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
+/*Due to the template not being commented, like, at all, i am not 100% sure this hasnt been done elsewhere, and with other uni projects i dont rlly have the time to dig deeper and learn webdev*/
+:root{
+	--BackgroundColour: #fff;
+		--BackgroundColourA: #121218;
+
+	--AccentColour: #f5d442;
+	--AccentTextColour: :
+}
+
+
+/*https://www.w3schools.com/howto/howto_js_slideshow.asp*/
+
+
+
+.slideshow{
+	position: relative;
+	margin: auto;
+}
+
+/*Hidden by default, animations will follow*/
+.slides {
+	display: none;
+}
+
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50px;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.cap-text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.num-text {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+.SSFade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes SSFade {
+	from {opacity: .4}
+	to {opacity: 1}
+}
+
 /*
 	Read Only by HTML5 UP
 	html5up.net | @ajlkn
@@ -23,7 +116,8 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -1759,7 +1853,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: #aaa;
+		color: var(--AccentColour);
 		position: relative;
 		margin: 0 0 1.6875em 0;
 	}
@@ -1785,7 +1879,7 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #f5d442;
+		color: var(--AccentColour);
 		font-size: 3.5em;
 	}
 
@@ -2199,9 +2293,13 @@ input, select, textarea {
 			}
 
 		.image.main {
-			display: block;
-			height: 20em;
+			height: 30em;
+			display:block;
 			border-radius: 0;
+		}
+
+		.image.main.MatCt{
+			height: 40em;
 		}
 
 			.image.main img {
@@ -2720,11 +2818,11 @@ input, select, textarea {
 			}
 
 		#header header p {
-			color: #b7eadc;
+			color: #ffffff;
 		}
 
 		#header a {
-			color: #d2f2e9;
+			color: #ffffff;
 		}
 
 			#header a:hover {
@@ -2751,7 +2849,7 @@ input, select, textarea {
 			}
 
 			#header > header p {
-				color: #d2f2e9;
+				color: #ffffff;
 				font-style: italic;
 				margin: 1em 0 0 0;
 			}
@@ -2772,7 +2870,7 @@ input, select, textarea {
 			}
 
 				#header > footer .icons li a {
-					color: #b7eadc;
+					color: #ffffff;
 				}
 
 		#header > nav {
@@ -2789,7 +2887,7 @@ input, select, textarea {
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb1;
+					border-top: solid 2px #ffffff;
 					display: block;
 					padding: 0;
 				}
@@ -2805,7 +2903,7 @@ input, select, textarea {
 						padding: 0.85em 0;
 						text-decoration: none;
 					}
-
+			
 						#header > nav ul li a.active {
 							background: #fff;
 							color: #f5d442 !important;
@@ -2818,12 +2916,13 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		background: #fff;
+		background: var(--BackgroundColour);
 		padding-right: 23em;
 	}
 
 /* Main */
 
+	
 	#main > section {
 		border-top: solid 6px #f4f4f4;
 	}
@@ -2870,6 +2969,134 @@ input, select, textarea {
 					color: inherit;
 				}
 
+
+				/*THIS STUFF MAKES THE WAFFLE FOR THE ABOUT ME BIT PERMENANTLY VISIBLE...*/
+
+#titleBar {
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transition: -moz-transform 0.5s ease;
+	-webkit-transition: -webkit-transform 0.5s ease;
+	-ms-transition: -ms-transform 0.5s ease;
+	transition: transform 0.5s ease;
+	display: block;
+	height: 44px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10001;
+	background: #222;
+	color: #fff;
+	min-width: 320px;
+}
+
+#titleBar .title {
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	height: 44px;
+	line-height: 44px;
+	padding: 0 1em;
+	width: 100%;
+	text-align: left;
+}
+
+#titleBar .title a {
+	border: 0;
+	text-decoration: none;
+}
+
+#titleBar .toggle {
+	text-decoration: none;
+	height: 4em;
+	position: absolute;
+	top: 0;
+	width: 6em;
+	border: 0;
+	outline: 0;
+	right: 0;
+}
+
+#titleBar .toggle:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	text-transform: none !important;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+}
+
+#titleBar .toggle:before {
+	background: #f5d442;
+	color: #ffffff;
+	content: '\f0c9';
+	display: block;
+	font-size: 18px;
+	height: 44px;
+	line-height: 44px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 64px;
+	right: 0;
+}
+
+body.header-visible #wrapper, body.header-visible #titleBar {
+	-moz-transform: translateX(-23em);
+	-webkit-transform: translateX(-23em);
+	-ms-transform: translateX(-23em);
+	transform: translateX(-23em);
+}
+
+body.header-visible #header {
+	-moz-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+#header {
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-transition: -moz-transform 0.5s ease;
+	-webkit-transition: -webkit-transform 0.5s ease;
+	-ms-transition: -ms-transform 0.5s ease;
+	transition: transform 0.5s ease;
+	display: block;
+	height: 100%;
+	overflow-y: auto;
+	position: fixed;
+	top: 0;
+	width: 23em;
+	z-index: 10002;
+	-moz-transform: translateX(23em);
+	-webkit-transform: translateX(23em);
+	-ms-transform: translateX(23em);
+	transform: translateX(23em);
+	right: 0;
+}
+
+#header > footer {
+	bottom: auto;
+	left: auto;
+	margin: 0.5em 0 0 0;
+	position: relative;
+	right: auto;
+	top: auto;
+}
+
+/*////*/
+
+
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {
@@ -2912,6 +3139,7 @@ input, select, textarea {
 
 	@media screen and (max-width: 1280px) {
 
+		
 		/* Basic */
 
 			body, input, select, textarea {
@@ -2933,10 +3161,6 @@ input, select, textarea {
 	}
 
 /* Medium */
-
-	#titleBar {
-		display: none;
-	}
 
 	@media screen and (max-width: 1024px) {
 
