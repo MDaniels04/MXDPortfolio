@@ -34,9 +34,9 @@
 	position: absolute;
 	top: 50px;
 	width: auto;
-	margin-top: -22px;
+	margin-top: 20em;
 	padding: 16px;
-	color: white;
+	color: var(--AccentColour);
 	font-weight: bold;
 	font-size: 18px;
 	transition: 0.6s ease;
@@ -55,21 +55,20 @@
 }
 
 .cap-text {
-	color: #f2f2f2;
+	color: var(--AccentColour);
 	font-size: 15px;
-	padding: 8px 12px;
-	position: absolute;
+	position: relative;
 	bottom: 8px;
 	width: 100%;
 	text-align: center;
 }
 
 .num-text {
-	color: #f2f2f2;
+	color: var(--AccentColour);
 	font-size: 12px;
-	padding: 8px 12px;
-	position: absolute;
-	top: 0;
+	padding: 1em 5em;
+	position: relative;
+	text-align: center;
 }
 
 .dot {
